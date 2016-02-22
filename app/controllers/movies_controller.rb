@@ -11,7 +11,21 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @movies = Movie.all
+#    @movies = Movie.all
+
+        sort = params[:sort] 
+      case sort
+      when  'title'
+        ordering,@title_header = :title, 'hilite'
+        when 'release_date'
+          ordering,@release_date_header = :release_date, 'hilite'
+        
+      end
+    @movies = Movie.order(ordering)
+    @all_ratings = Movie.ratings.inject(Hash.new) do |all_ratings, rating|
+          all_ratings[rating] = @ratings.nil? ? false : @ratings.has_key?(rating) 
+          all_ratings
+        end 
   end
 
   def new
