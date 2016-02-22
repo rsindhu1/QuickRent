@@ -13,19 +13,39 @@ class MoviesController < ApplicationController
   def index
 #    @movies = Movie.all
 
-        sort = params[:sort] 
-      case sort
-      when  'title'
-        ordering,@title_header = :title, 'hilite'
-        when 'release_date'
-          ordering,@release_date_header = :release_date, 'hilite'
-        
+#        sort = params[:sort] 
+#      case sort
+#      when  'title'
+#        ordering,@title_header = :title, 'hilite'
+#        when 'release_date'
+#          ordering,@release_date_header = :release_date, 'hilite'
+#        
+#      end
+#    @movies = Movie.order(ordering)
+#    @all_ratings = Movie.ratings.inject(Hash.new) do |all_ratings, rating|
+#          all_ratings[rating] = @ratings.nil? ? false : @ratings.has_key?(rating) 
+#          all_ratings
+#       end 
+
+
+    @all_ratings = Movie.ratings
+    @rating_selection = params[:ratings] || session[:ratings] || {}
+    if @rating_selection == {} then
+      Movie.ratings.each do |r|
+        @rating_selection[r] = 1
       end
-    @movies = Movie.order(ordering)
-    @all_ratings = Movie.ratings.inject(Hash.new) do |all_ratings, rating|
-          all_ratings[rating] = @ratings.nil? ? false : @ratings.has_key?(rating) 
-          all_ratings
-        end 
+    end
+    @sort_param = params[:sort_by] || session[:sort_by]
+    if @sort_param == 'title' then @title_class = 'hilite'
+      elsif @sort_param == 'release_date' then @release_date_class = 'hilite'
+    end
+    if session[:ratings] != params[:ratings] or session[:sort_by] != params[:sort_by]
+      session[:ratings] = params[:ratings]
+      session[:sort_by] = params[:sort_by]
+      redirect_to :sort_by => @sort_param, :ratings => @rating_selection
+    end
+    @movies = Movie.where(rating: @rating_selection.keys).order(@sort_param)
+
   end
 
   def new
