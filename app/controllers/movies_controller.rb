@@ -51,6 +51,11 @@ class MoviesController < ApplicationController
   def new
     # default: render 'new' template
   end
+  
+  helper_method :login
+  def login
+    "Hello!"
+  end
 
   def create
     @movie = Movie.create!(movie_params)

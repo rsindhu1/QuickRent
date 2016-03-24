@@ -11,3 +11,16 @@ class CreateMovies < ActiveRecord::Migration
     end
   end
 end
+
+class CreateUsers < ActiveRecord::Migration
+  def change
+    create_table :users do |t|
+      t.string :username
+      t.string :sex
+      t.string :password
+      # Add fields that let Rails automatically keep track
+      # of when movies are added or modified:
+      t.timestamps
+    end
+  end
+end
