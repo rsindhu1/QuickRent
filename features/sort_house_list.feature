@@ -7,12 +7,12 @@ Feature: display list of houses sorted by different criteria
 Background: houses have been added to database
   
   Given the following houses exist:
-  | title                   | rating | release_date |
-  | 11 Catherine Street     | G      | 25-Mar-2016  |
-  | 44 Schiller             | R      | 26-Mar-2016  |
-  | 207                     | R      | 21-Mar-2016  |
-  | 209                     | PG-13  | 10-Apr-2016  |
-  | murray                  | PG-13  | 5-Apr-2016   |
+  | title                   | rating       | release_date |
+  | 11 Catherine Street     | Vestal     | 25-Mar-2016  |
+  | 44 Schiller             | Binghamton | 26-Mar-2016  |
+  | 207                     | Downtown   | 21-Mar-2016  |
+  | 209                     | Endicott   | 10-Apr-2016  |
+  | murray                  | University | 5-Apr-2016   |
 
   And I am on the RottenPotatoes home page
 

@@ -39,7 +39,7 @@
       \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     %p{:style => "width: 157px"}
       %strong Place
-      %select.auto-style1{:name => "place", :style => "width: 59px"}
+      %select.auto-style1{:title => "place", :style => "width: 59px"}
         %option
         %option{:value => "Main Street"} Main Street
         %option{:value => "Vestal"} Vestal
@@ -51,7 +51,7 @@
       %strong>
         Purpose
       \&nbsp;&nbsp;
-      %select{:name => "purpose", :style => "width: 143px"}
+      %select{:title => "purpose", :style => "width: 143px"}
         %option
         %option{:value => "Residential Short Term"} Residential Short Term
         %option{:value => "Residential Long Term"} Residential Long Term
@@ -62,7 +62,7 @@
           \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           Type
       = succeed "&amp;nbsp;" do
-        %select{:name => "type_of_house", :style => "width: 91px"}
+        %select{:title => "type_of_house", :style => "width: 91px"}
           %option
           %option{:value => "1 BHK"} 1 BHK
           %option{:value => "2 BHK"} 2 BHK
@@ -75,11 +75,11 @@
           Dates
       %label#Label1
         \&nbsp;
-        %select{:name => "Select1"}
+        %select{:title => "Select1"}
           %option
         to
         = succeed "&amp;nbsp;" do
-          %select{:name => "Select2"}
+          %select{:title => "Select2"}
             %option
             %option{:value => "1"} 1
             %option{:value => "2"} 2
@@ -93,7 +93,7 @@
       %strong Range
       %label#Label2
         \&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        %select{:name => "Select6"}
+        %select{:title => "Select6"}
           %option
           %option{:value => "100$"} 100$
           %option{:value => "200$"} 200$
@@ -103,7 +103,7 @@
           %option{:value => "600$"} 600$
         to
         = succeed "&amp;nbsp;" do
-          %select{:name => "Select7"}
+          %select{:title => "Select7"}
             %option
             %option{:value => "100$"} 100$
             %option{:value => "200$"} 200$
@@ -121,7 +121,7 @@
     %p.auto-style8{:style => "width: 142px; height: 26px;"}
       %strong> View
       \&nbsp;
-      %select.auto-style7{:name => "Select8"}
+      %select.auto-style7{:title => "Select8"}
         %option
         %option{:value => "30 Houses"} 30 Houses
         %option{:value => "40 Houses"} 40 Houses

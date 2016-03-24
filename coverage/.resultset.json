@@ -4,7 +4,7 @@
       "/home/ubuntu/workspace/quickrent-app/app/models/house.rb": [
         1,
         1,
-        12,
+        4,
         null,
         null
       ],
@@ -39,23 +39,23 @@
         null,
         null,
         null,
+        2,
+        2,
+        2,
+        2,
         8,
-        8,
-        8,
-        4,
-        16,
         null,
         null,
-        8,
-        8,
-        3,
+        2,
+        2,
+        0,
         null,
-        8,
-        4,
-        4,
-        4,
+        2,
+        0,
+        0,
+        0,
         null,
-        8,
+        2,
         null,
         null,
         null,
@@ -114,6 +114,6 @@
         null
       ]
     },
-    "timestamp": 1458856445
+    "timestamp": 1458859823
   }
 }

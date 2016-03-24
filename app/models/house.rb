@@ -1,5 +1,5 @@
 class House < ActiveRecord::Base
     def self.ratings 
-        ['G','PG','PG-13','R']
+        ['Vestal','Binghamton','Downtown','Endicott']
     end
 end
