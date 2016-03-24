@@ -1,0 +1,14 @@
+-# edit.html.haml using partial
+
+%h1 Edit House Listing
+
+= form_tag house_path(@house), :method => :put do
+
+  = label :house, :title, 'Title'
+  = text_field :house, 'title'
+
+  = label :house, :release_date, 'Date available On'
+  = date_select :house, :release_date
+
+  = submit_tag 'Update House Listing'
+= link_to 'Back to house listings', houses_path

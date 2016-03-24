@@ -33,18 +33,18 @@ h1.title {
   font-size: 2em;
   font-style: normal;
 }
-table#movies {
+table#houses {
   margin: 10px;
   border-collapse: collapse;
   width: 100%;
   border-bottom: 2px solid black;
 }
-table#movies th {
+table#houses th {
   border: 2px solid white;
   font-weight: bold;
   background-color: wheat;
 }
-table#movies th, table#movies td {
+table#houses th, table#houses td {
   padding: 4px;
   text-align: left;
 }
@@ -53,7 +53,7 @@ table#movies th, table#movies td {
   margin: 1em 0;
   padding: 4px;
 }
-table#movies th.hilite {
+table#houses th.hilite {
   background-color: yellow;
 }
 form label {

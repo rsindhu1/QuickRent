@@ -1,10 +1,10 @@
-# Add a declarative step here for populating the DB with movies.
+# Add a declarative step here for populating the DB with houses.
 
-Given /the following movies exist/ do |movies_table|
-  movies_table.hashes.each do |movie|
+Given /the following houses exist/ do |houses_table|
+  houses_table.hashes.each do |house|
     # each returned element will be a hash whose key is the table header.
-    # you should arrange to add that movie to the database here.
-  Movie.create!(movie)
+    # you should arrange to add that house to the database here.
+  House.create!(house)
   end
   #fail "Unimplemented"
 end
@@ -21,8 +21,8 @@ Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
 end
 
 Then(/^the director of "(.*?)" should be "(.*?)"$/) do |title, director|
-    movie = Movie.find_by_title(title)
-    movie.director.should == director
+    house = House.find_by_title(title)
+    house.director.should == director
 end
 
 # Make it easier to express checking or unchecking several boxes at once
@@ -40,20 +40,20 @@ When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
   # fail "Unimplemented"
 end
 
-Then /I should see all the movies/ do
-  # Make sure that all the movies in the app are visible in the table
-  movie_list = Movie.all.collect! { |movie| movie.title}
-  movie_list.each { |title| step %Q{I should see "#{title}"}}
+Then /I should see all the houses/ do
+  # Make sure that all the houses in the app are visible in the table
+  house_list = House.all.collect! { |house| house.title}
+  house_list.each { |title| step %Q{I should see "#{title}"}}
   #fail "Unimplemented"
 end
 
-Then /I should (not )?see the following movies: (.*)$/ do |not_see, movie_list|
-  movie_list.split(",").each do |movie|
-    movie = movie.gsub(/["']/, '').strip
+Then /I should (not )?see the following houses: (.*)$/ do |not_see, house_list|
+  house_list.split(",").each do |house|
+    house = house.gsub(/["']/, '').strip
     if not_see
-      expect(page).to_not have_content(movie)
+      expect(page).to_not have_content(house)
     else
-      expect(page).to have_content(movie)
+      expect(page).to have_content(house)
     end
   end
 end

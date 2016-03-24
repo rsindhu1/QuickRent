@@ -1,17 +1,17 @@
-class MoviesController < ApplicationController
+class HousesController < ApplicationController
 
-  def movie_params
-    params.require(:movie).permit(:title, :rating, :description, :release_date)
+  def house_params
+    params.require(:house).permit(:title, :rating, :description, :release_date)
   end
 
   def show
-    id = params[:id] # retrieve movie ID from URI route
-    @movie = Movie.find(id) # look up movie by unique ID
-    # will render app/views/movies/show.<extension> by default
+    id = params[:id] # retrieve house ID from URI route
+    @house = House.find(id) # look up house by unique ID
+    # will render app/views/houses/show.<extension> by default
   end
 
   def index
-#    @movies = Movie.all
+#    @houses = House.all
 
 #        sort = params[:sort] 
 #      case sort
@@ -21,17 +21,17 @@ class MoviesController < ApplicationController
 #          ordering,@release_date_header = :release_date, 'hilite'
 #        
 #      end
-#    @movies = Movie.order(ordering)
-#    @all_ratings = Movie.ratings.inject(Hash.new) do |all_ratings, rating|
+#    @houses = House.order(ordering)
+#    @all_ratings = House.ratings.inject(Hash.new) do |all_ratings, rating|
 #          all_ratings[rating] = @ratings.nil? ? false : @ratings.has_key?(rating) 
 #          all_ratings
 #       end 
 
 
-    @all_ratings = Movie.ratings
+    @all_ratings = House.ratings
     @rating_selection = params[:ratings] || session[:ratings] || {}
     if @rating_selection == {} then
-      Movie.ratings.each do |r|
+      House.ratings.each do |r|
         @rating_selection[r] = 1
       end
     end
@@ -44,7 +44,7 @@ class MoviesController < ApplicationController
       session[:sort_by] = params[:sort_by]
       redirect_to :sort_by => @sort_param, :ratings => @rating_selection
     end
-    @movies = Movie.where(rating: @rating_selection.keys).order(@sort_param)
+    @houses = House.where(rating: @rating_selection.keys).order(@sort_param)
 
   end
 
@@ -58,27 +58,27 @@ class MoviesController < ApplicationController
   end
 
   def create
-    @movie = Movie.create!(movie_params)
-    flash[:notice] = "#{@movie.title} was successfully created."
-    redirect_to movies_path
+    @house = House.create!(house_params)
+    flash[:notice] = "#{@house.title} was successfully created."
+    redirect_to houses_path
   end
 
   def edit
-    @movie = Movie.find params[:id]
+    @house = House.find params[:id]
   end
 
   def update
-    @movie = Movie.find params[:id]
-    @movie.update_attributes!(movie_params)
-    flash[:notice] = "#{@movie.title} was successfully updated."
-    redirect_to movie_path(@movie)
+    @house = House.find params[:id]
+    @house.update_attributes!(house_params)
+    flash[:notice] = "#{@house.title} was successfully updated."
+    redirect_to house_path(@house)
   end
 
   def destroy
-    @movie = Movie.find(params[:id])
-    @movie.destroy
-    flash[:notice] = "Movie '#{@movie.title}' deleted."
-    redirect_to movies_path
+    @house = House.find(params[:id])
+    @house.destroy
+    flash[:notice] = "House '#{@house.title}' deleted."
+    redirect_to houses_path
   end
 
 end

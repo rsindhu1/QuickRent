@@ -6,7 +6,7 @@ Feature: display list of houses sorted by different criteria
 
 Background: houses have been added to database
   
-  Given the following movies exist:
+  Given the following houses exist:
   | title                   | rating | release_date |
   | 11 Catherine Street     | G      | 25-Mar-2016  |
   | 44 Schiller             | R      | 26-Mar-2016  |

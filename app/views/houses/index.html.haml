@@ -1,0 +1,16 @@
+-#  This file is app/views/houses/index.html.haml
+%h1 House Listings
+%table#houses
+  %thead
+    %tr
+      %th{:class => @title_header}= link_to 'House', houses_path(:sort_by => 'title'), :id => 'title_header'
+      %th{:class => @release_date_header}= link_to "Date available", houses_path(:sort_by => 'release_date'), :id => 'release_date_header'
+      %th More Info
+  %tbody
+    - @houses.each do |house|
+      %tr
+        %td= house.title 
+        %td= house.release_date
+        %td= link_to "More about #{house.title}", house_path(house)
+
+-#= link_to 'Add new house', new_house_path
