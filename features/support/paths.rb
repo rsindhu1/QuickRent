@@ -15,7 +15,7 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/houses'
-    when /^the RottenPotatoes home page$/
+    when /^the QuickRent home page$/
       '/houses'
     when /^the (edit|details) page for "(.*)"$/
       house = House.find_by_title($2)
@@ -23,7 +23,7 @@ module NavigationHelpers
     when /^the Similar Houses page for "(.*)"$/
       house = House.find_by_title($1)
       same_director_path(house)
-      
+    
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
@@ -41,6 +41,13 @@ module NavigationHelpers
       end
     end
   end
+  
+  #def login
+  
+    #fill_in('User name', with: user.name)
+    #fill_in('Password', with: user.password)
+    #click_button('Log in')
+  #end
 end
 
 World(NavigationHelpers)

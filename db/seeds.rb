@@ -14,8 +14,9 @@ houses = [{:title => '11 Catherine Street', :rating => 'Vestal', :release_date =
   	 ]
 
 
-  
 houses.each do |house|
   House.create!(house)
 end
+
+User.create(name: 'Ankush', password: 'arora')
 

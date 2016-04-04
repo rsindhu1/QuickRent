@@ -11,28 +11,11 @@ class HousesController < ApplicationController
   end
 
   def index
-#    @houses = House.all
-
-#        sort = params[:sort] 
-#      case sort
-#      when  'title'
-#        ordering,@title_header = :title, 'hilite'
-#        when 'release_date'
-#          ordering,@release_date_header = :release_date, 'hilite'
-#        
-#      end
-#    @houses = House.order(ordering)
-#    @all_areas = House.ratings.inject(Hash.new) do |all_areas, rating|
-#          all_areas[rating] = @ratings.nil? ? false : @ratings.has_key?(rating) 
-#          all_areas
-#       end 
-
-
-    @all_areas = House.ratings
-    @area_selection = params[:ratings] || session[:ratings] || {}
-    if @area_selection == {} then
+    @all_ratings = House.ratings
+    @rating_selection = params[:ratings] || session[:ratings] || {}
+    if @rating_selection == {} then
       House.ratings.each do |r|
-        @area_selection[r] = 1
+        @rating_selection[r] = 1
       end
     end
     @sort_param = params[:sort_by] || session[:sort_by]
@@ -42,9 +25,9 @@ class HousesController < ApplicationController
     if session[:ratings] != params[:ratings] or session[:sort_by] != params[:sort_by]
       session[:ratings] = params[:ratings]
       session[:sort_by] = params[:sort_by]
-      redirect_to :sort_by => @sort_param, :ratings => @area_selection
+      redirect_to :sort_by => @sort_param, :ratings => @rating_selection
     end
-    @houses = House.where(rating: @area_selection.keys).order(@sort_param)
+    @houses = House.where(rating: @rating_selection.keys).order(@sort_param)
 
   end
 

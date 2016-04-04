@@ -9,6 +9,7 @@ class CreateHouses < ActiveRecord::Migration
       # of when houses are added or modified:
       t.timestamps
     end
+    end
   end
 end
 

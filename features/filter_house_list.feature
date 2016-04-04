@@ -14,10 +14,9 @@ Background: houses have been added to database
   | 209                     | Endicott   | 10-Apr-2016  |
   | murray                  | Vestal     | 5-Apr-2016   |
 
-  And  I am on the RottenPotatoes home page
+  And  I am on the QuickRent home page
 
 Scenario: restrict to houses with 'Vestal' or 'Endicott' ratings
-  # enter step(s) to check the 'PG' and 'R' checkboxes
   When I check the following ratings: Vestal Endicott
   
   # enter step(s) to uncheck all other checkboxes
