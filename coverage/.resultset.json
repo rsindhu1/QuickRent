@@ -1,13 +1,6 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/home/ubuntu/workspace/quickrent-app/app/models/house.rb": [
-        1,
-        1,
-        22,
-        null,
-        null
-      ],
       "/home/ubuntu/workspace/quickrent-app/app/controllers/houses_controller.rb": [
         1,
         null,
@@ -22,28 +15,31 @@
         null,
         null,
         1,
-        15,
-        15,
-        15,
-        7,
-        28,
+        16,
+        16,
+        16,
+        8,
+        32,
         null,
         null,
-        15,
-        15,
+        16,
+        16,
         3,
         null,
-        15,
+        16,
         6,
         6,
         6,
         null,
-        15,
+        16,
         null,
         null,
         null,
         1,
         null,
+        null,
+        null,
+        1,
         null,
         null,
         1,
@@ -96,12 +92,27 @@
         null,
         null
       ],
+      "/home/ubuntu/workspace/quickrent-app/app/helpers/sessions_helper.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/quickrent-app/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/home/ubuntu/workspace/quickrent-app/app/models/house.rb": [
+        1,
+        1,
+        24,
+        null,
+        null
+      ],
       "/home/ubuntu/workspace/quickrent-app/app/models/user.rb": [
         1,
         null,
         null
       ]
     },
-    "timestamp": 1458936775
+    "timestamp": 1459930810
   }
 }

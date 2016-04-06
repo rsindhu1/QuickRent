@@ -57,8 +57,12 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
   click_link(link)
 end
 
-When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
-  fill_in(field, :with => value)
+When /^(?:|I )fill in user_name with "([^"]*)"$/ do |value|
+  fill_in(name, :with => value)
+end
+
+When /^(?:|I )fill in user_password with "([^"]*)"$/ do |value|
+  fill_in(password, :with => value)
 end
 
 When /^(?:|I )fill in "([^"]*)" for "([^"]*)"$/ do |value, field|

@@ -35,6 +35,9 @@ class HousesController < ApplicationController
     # default: render 'new' template
   end
   
+  def aboutus
+  end
+  
   helper_method :login
   def login
     "Hello!"

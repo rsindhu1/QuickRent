@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  match ':controller(/:action)', :via => :get
+  
+  match '/aboutus' => 'houses#aboutus', :via => :get
+  match '/welcome' => 'houses#welcome', :via => :get
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -13,8 +17,12 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
   resources :houses
+#  resources :houses do
+#    member do
+#    get 'aboutus'
+#  end
+#end
   #root :to => redirect('/houses')
 
   # Example resource route with options:

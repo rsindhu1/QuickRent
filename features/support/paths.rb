@@ -12,8 +12,11 @@ module NavigationHelpers
   #
   def path_to(page_name)
     case page_name
-
+    when /^new\s?page$/
+      '/houses'
     when /^the home\s?page$/
+      '/houses'
+    when /^the login\s?page$/
       '/houses'
     when /^the QuickRent home page$/
       '/houses'

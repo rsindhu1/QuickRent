@@ -1,12 +1,15 @@
 %h1 Login
 
-= form_for houses_path do
+%form
+  Name:
+  %br
+    %input{:name => "Name", :type => "text"}
+      %br
+        Password:
+        %br
+          %input{:password => "Password", :type => "password"}
+%button{:name => "login", :type => "submit", :value => "login"} Login
+%p~ "\n"
 
-  = label :house, :title, 'Name'
-  = text_field :house, 'title'
-
-  = label :house, :release_date, 'Password'
-  = password_field :house, 'release_date'
-
-  = submit_tag 'Login'
 = link_to 'Back to House Listings', houses_path
+

@@ -13,12 +13,12 @@ Background: users have been added to database
   And I am on the QuickRent home page
 
 Scenario: login functionality
-  When I login using username 'Ankush' and password 'arora'
-  # enter step(s) to uncheck all other checkboxes
-  
-  # enter step to "submit" the search form on the homepage
+  When I go to new page
+
+#  When I fill in user_name with "Ankush"
+#  And I fill in user_password with "arora"
   When I press "Login"
   
-  # enter step(s) to ensure that PG and R movies are visible
-  Then login should be successful
-  # enter step(s) to ensure that other movies are not visible
+  # Then login should be successful
+  #Then I should be 
+  Then I should get message "Signed in successfully."

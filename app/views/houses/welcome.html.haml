@@ -1,8 +1,11 @@
 -#  This file is app/views/houses/welcome.html.haml
-%h1 Welcome to QuickRent!
+%h1 Welcome to QuickRent.
 
 = link_to 'Login', new_house_path
+%p~ "\n"
 = link_to 'House Listings', houses_path
+%p~ "\n"
+= link_to "About Us", controller: "aboutus"
 %p~ "\n"
 
 =image_tag "RentAHome.jpg"
