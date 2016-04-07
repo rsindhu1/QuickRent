@@ -16,7 +16,6 @@ Then(/^page should have text "([^"]*)"$/) do |arg1|
   arg1 == text
 end
 
-
 Given(/^the following users exist:$/) do |user_table|
   # table is a Cucumber::Ast::Table
   # pending # express the regexp above with the code you wish you had
@@ -28,9 +27,12 @@ Given(/^the following users exist:$/) do |user_table|
 end
 
 
-When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
-  fill_in(field, :with => value)
+
+Given (/I sign up as "(.+)"/i) do |name|
+ step %Q{I fill in "password" with "password"}
 end
+
+
 
 #When(/^I go to login page$/) do
 #  visit '/houses/welcome'
