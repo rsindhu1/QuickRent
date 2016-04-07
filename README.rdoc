@@ -1,5 +1,44 @@
 == README
 
+Welcome to QuickRent!!
+
+Github link: https://github.com/aarora3/QuickRent
+
+Steps:
+
+* Ruby version
+
+ruby -version
+ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-linux]
+
+Gemfile
+source 'https://rubygems.org'
+
+ruby '2.3.0'
+
+
+1. Fork the project.
+2. Copy to clipboard.
+3. Go to your development environment, example cloud9, create an empty project and on bash give command:
+    'git clone <copied link>''
+4. do 'bundle install'. If you dont have bundler, install that using command 'gem install bundler'.
+5. rake db:migrate
+6. rake db:seed
+7. rake db:test:prepare
+8. To run application: 'rails s -p $PORT -b $IP'
+9. To run cucumber: 'cucumber'
+10. To run rspecs: 'rspec spec'
+11. to push changes onto github:
+    git add -A
+    git commit -am "version 1.11"
+    git push origin master
+12. to push changes onto heroku:
+    heroku login
+    heroku create
+    git push heroku master
+
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
