@@ -15,9 +15,9 @@ Background: users have been added to database
 Scenario: login functionality
   When I go to new page
 
-  When I fill in "name" with "Ankush"
+  When I fill in "Name" with "Ankush"
   
-  When I fill in "password" with "arora"
+  When I fill in "Password" with "arora"
   
   And I press "Login"
   

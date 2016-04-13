@@ -1,7 +1,7 @@
 class HousesController < ApplicationController
 
   def house_params
-    params.require(:house).permit(:title, :rating, :description, :release_date)
+  #  params.require(:house).permit(:title, :rating, :description, :release_date)
   end
 
   def show

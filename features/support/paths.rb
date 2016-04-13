@@ -11,9 +11,11 @@ module NavigationHelpers
   # step definition in web_steps.rb
   #
   def path_to(page_name)
+    p page_name
     case page_name
     when /^new\s?page$/
-      '/houses'
+  #    '/houses'
+      new_house_path
     when /^the home\s?page$/
       '/houses'
     when /^the login\s?page$/

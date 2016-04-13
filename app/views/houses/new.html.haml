@@ -1,18 +1,15 @@
 %h1 Login
 
+= form_tag houses_path do
 
-
-= form_tag login_path id: "Login" do
-
-
-  = label :user, :name, 'name'
+  = label :user, :name, 'Name'
   = text_field :user, 'name'
 
-  = label :user, :password, 'password'
+  = label :user, :password, 'Password'
   = password_field :user, 'password'
 
-  = submit_tag 'Login', :id => 'Login'
+  = submit_tag 'Login'
+  
+  
 = link_to 'Back to House Listings', houses_path
 %p~ "\n"
-
--#= link_to 'sample',sample_house_path
