@@ -1,9 +1,4 @@
 class HousesController < ApplicationController
-
-  def house_params
-  #  params.require(:house).permit(:title, :rating, :description, :release_date)
-  end
-
   def show
     id = params[:id] # retrieve house ID from URI route
     @house = House.find(id) # look up house by unique ID
@@ -21,6 +16,7 @@ class HousesController < ApplicationController
     @sort_param = params[:sort_by] || session[:sort_by]
     if @sort_param == 'title' then @title_header = 'hilite'
       elsif @sort_param == 'release_date' then @release_date_header = 'hilite'
+      elsif @sort_param == 'price' then @price_header = 'hilite'
     end
     if session[:ratings] != params[:ratings] or session[:sort_by] != params[:sort_by]
       session[:ratings] = params[:ratings]
@@ -66,5 +62,11 @@ class HousesController < ApplicationController
     flash[:notice] = "House '#{@house.title}' deleted."
     redirect_to houses_path
   end
+  
+  private
+  def house_params
+    params.require(:house).permit(:title, :rating, :description, :release_date,:price)
+  end
+
 
 end

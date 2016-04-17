@@ -36,6 +36,10 @@ gem 'uglifier', '>= 2.7.1'
 
 gem 'jquery-rails'
 gem 'haml'
+gem 'haml-rails'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-digitalocean'
 
 # Use unicorn as the web server
 # gem 'unicorn'

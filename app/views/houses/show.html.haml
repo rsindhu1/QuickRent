@@ -14,3 +14,4 @@
 = link_to 'Edit', edit_house_path(@house)
 = button_to 'Delete', house_path(@house), :method => :delete, :confirm => 'Are you sure?'
 = link_to 'Back to house listings', houses_path
+= link_to 'Add Review', new_house_review_path(@house)

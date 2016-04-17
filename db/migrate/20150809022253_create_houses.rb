@@ -5,12 +5,13 @@ class CreateHouses < ActiveRecord::Migration
       t.string :rating
       t.text :description
       t.datetime :release_date
+      t.float :price
       # Add fields that let Rails automatically keep track
       # of when houses are added or modified:
       t.timestamps
     end
-    end
   end
 end
+
 
 

@@ -7,13 +7,13 @@ Feature: display list of houses filtered by rating
 Background: houses have been added to database
 
   Given the following houses exist:
-  | title                   | rating       | release_date |
-  | 11 Catherine Street     | Vestal     | 25-Mar-2016  |
-  | 44 Schiller             | Binghamton | 26-Mar-2016  |
-  | 207                     | Downtown   | 21-Mar-2016  |
-  | 209                     | Endicott   | 10-Apr-2016  |
-  | murray                  | Vestal     | 5-Apr-2016   |
-
+  | title                   | rating     | release_date | price  |
+  | 11 Catherine Street     | Vestal     | 25-Mar-2016  | 350.00 |
+  | 44 Schiller             | Binghamton | 26-Mar-2016  | 325.00 |
+  | 207                     | Downtown   | 21-Mar-2016  | 375.00 |
+  | 209                     | Endicott   | 10-Apr-2016  | 250.00 |
+  | murray                  | Vestal     | 5-Apr-2016   | 275.00 |
+  | oak                     | Downtown   | 15-Apr-2016  | 175.00 |
   And  I am on the QuickRent home page
 
 Scenario: restrict to houses with 'Vestal' or 'Endicott' ratings

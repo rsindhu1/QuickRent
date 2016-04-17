@@ -9,6 +9,9 @@
 
   = label :house, :release_date, 'Date available On'
   = date_select :house, :release_date
+  
+  = label :house, :price, 'price'
+  = text_field :house, :price
 
   = submit_tag 'Update House Listing'
 = link_to 'Back to house listings', houses_path

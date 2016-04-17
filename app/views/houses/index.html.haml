@@ -4,6 +4,7 @@
 = form_tag houses_path, :method => :get, :id => 'ratings_form' do
   = hidden_field_tag "title_sort", true if @title_header
   = hidden_field_tag ":release_date_sort", true if @date_header
+  = hidden_field_tag ":price_sort", true if @price_header
   Include: 
   - @all_ratings.each do |rating|
     = rating
@@ -17,15 +18,19 @@
       %th{:class => @title_header}= link_to 'House', houses_path(:sort_by => 'title'), :id => 'title_header'
       %th Area
       %th{:class => @release_date_header}= link_to "Date available", houses_path(:sort_by => 'release_date'), :id => 'release_date_header'
+      %th{:class => @price_header}= link_to "Price", houses_path(:sort_by => 'price'), :id => 'price_header'
       %th More Info
+      
   %tbody
     - @houses.each do |house|
       %tr
         %td= house.title 
         %td= house.rating
         %td= house.release_date
+        %td= house.price
         %td= link_to "More about #{house.title}", house_path(house)
+      
 
 
-= link_to "Back to Welcome page", controller: "welcome"
-%p~ "\n"
+= link_to "Back to Welcome page", controller: "welcome" 
+%p= link_to " Add Reviews ", controller: "Review"

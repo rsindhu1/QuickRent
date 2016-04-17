@@ -20,9 +20,9 @@ Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   # fail "Unimplemented"
 end
 
-Then(/^the director of "(.*?)" should be "(.*?)"$/) do |title, director|
+Then(/^the director of "(.*?)" should be "(.*?)"$/) do |title, price|
     house = House.find_by_title(title)
-    house.director.should == director
+    house.price.should == price
 end
 
 # Make it easier to express checking or unchecking several boxes at once

@@ -17,7 +17,7 @@ Background: houses have been added to database
 
   And I am on the QuickRent home page
 
-Scenario: sort houses in increasing order of release date
-  When I follow "Date available"
+Scenario: sort houses in increasing order of price
+  When I follow "Price"
   # your steps here
-  Then I should see "207" before "209"
+  Then I should see "175.00" before "250.00"
